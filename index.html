@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mother (MTHR) - Meme Token</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style>
+        :root {
+            --pastel-pink: #FFB6C1;
+            --pastel-blue: #ADD8E6;
+            --pastel-yellow: #FFFACD;
+            --text-color: #4A4A4A;
+        }
+        
+        body {
+            font-family: 'Comic Neue', cursive;
+            background-color: var(--pastel-yellow);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--pastel-pink);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 100px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.1);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: white;
+        }
+        
+        .hero {
+            background-color: var(--pastel-blue);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .cta-button {
+            background-color: var(--pastel-pink);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #FF69B4;
+        }
+        
+        .about, .tokenomics, .how-to-buy, .roadmap {
+            padding: 80px 0;
+        }
+        
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .tokenomics-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .tokenomics-list li {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .roadmap-phase {
+            background-color: var(--pastel-pink);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        footer {
+            background-color: var(--pastel-blue);
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .social-links a {
+            color: var(--text-color);
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: white;
+        }
+        
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        .animated-text {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <header>
+        <nav class="container">
+            <img src="./logo.png" alt="Mother Token Logo" class="logo">
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#tokenomics">Tokenomics</a>
+                <a href="#how-to-buy">How to Buy</a>
+                <a href="#roadmap">Roadmap</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to Mother (MTHR)</h1>
+                <div class="animated-text"></div>
+                <button class="cta-button">Join Our Cozy Community</button>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Mother</h2>
+                <p>Dive into the original altcoin that's always got a stash of snacks and zero bedtime rules. Mother (MTHR) is here to wrap you in a warm, digital hug and remind you of the good ol' days.</p>
+            </div>
+        </section>
+
+        <section id="tokenomics" class="tokenomics">
+            <div class="container">
+                <h2>Tokenomics</h2>
+                <ul class="tokenomics-list">
+                    <li>Total Supply: 1,000,000,000 MTHR</li>
+                    <li>5% of each transaction goes to the Snack Fund</li>
+                    <li>3% of each transaction is distributed to all holders</li>
+                    <li>2% of each transaction is burned forever</li>
+                </ul>
+                <img src="./logo.png" alt="Mother Token Logo" class="logo">
+            </div>
+        </section>
+
+        <section id="how-to-buy" class="how-to-buy">
+            <div class="container">
+                <h2>How to Buy</h2>
+                <ol>
+                    <li>Get a Wallet - Download a reputable Ethereum wallet like MetaMask or Trust Wallet.</li>
+                    <li>Acquire ETH - Purchase Ethereum (ETH) from a cryptocurrency exchange like Coinbase or Binance.</li>
+                    <li>Connect to a DEX - Connect your wallet to a decentralized exchange (DEX) like Uniswap or SushiSwap.</li>
+                    <li>Swap ETH for MTHR - Use the DEX's swap feature to exchange your ETH for MTHR.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="roadmap" class="roadmap">
+            <div class="container">
+                <h2>Roadmap</h2>
+                <div class="roadmap-phase">
+                    <h3>Phase 1: Tucking In</h3>
+                    <p>We'll launch Mother and focus on growing our cozy community. Expect lots of warm milk and cookies!</p>
+                </div>
+                <div class="roadmap-phase">
+                    <h3>Phase 2: Storytime</h3>
+                    <p>We'll spread the word about Mother through heartwarming marketing campaigns and form partnerships with other comforting projects.</p>
+                </div>
+                <div class="roadmap-phase">
+                    <h3>Phase 3: Building Blanket Forts</h3>
+                    <p>We'll develop new features and utilities for Mother, like a decentralized bedtime story platform.</p>
+                </div>
+                <div class="roadmap-phase">
+                    <h3>Phase 4: Family Reunion</h3>
+                    <p>We'll explore new opportunities to expand Mother's reach and bring more comfort to the crypto world.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Contract Address: 0x1234...5678</p>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fas fa-chart-line"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/babel">
+        // React component for animated text
+        const AnimatedText = () => {
+            React.useEffect(() => {
+                new Typed('.animated-text', {
+                    strings: ['The original altcoin with extra treats', 'Zero bedtime rules', 'Always cozy, always comforting'],
+                    typeSpeed: 50,
+                    backSpeed: 30,
+                    loop: true
+                });
+            }, []);
+
+            return <span className="animated-text"></span>;
+        };
+
+        ReactDOM.render(<AnimatedText />, document.querySelector('.animated-text'));
+
+        // GSAP animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from('.hero h1', {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            ease: 'power3.out'
+        });
+
+        gsap.from('.cta-button', {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            ease: 'power3.out',
+            delay: 0.5
+        });
+
+        gsap.utils.toArray('section').forEach(section => {
+            gsap.from(section, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                ease: 'power3.out'
+            });
+        });
+
+        // Particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#ffffff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 6, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+            },
+            retina_detect: true
+        });
+
+        // SweetAlert for CTA button
+        document.querySelector('.cta-button').addEventListener('click', () => {
+            Swal.fire({
+                title: 'Welcome to the Mother community!',
+                text: 'Get ready for lots of love, snacks, and zero bedtime rules!',
+                icon: 'success',
+                confirmButtonText: 'Yay!',
+                confirmButtonColor: '#FFB6C1'
+            });
+        });
+    </script>
+</body>
+</html>
